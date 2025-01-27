@@ -10,39 +10,39 @@
 <body>
     <h1> HTML </h1>
     <pre><code class="language-html">
-        &lt;!DOCTYPE html&gt;
-        &lt;html lang="en"&gt;
-        &lt;head&gt;
-            &lt;meta charset="UTF-8"&gt;
-            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-            &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" crossorigin="anonymous"&gt;&lt;/script&gt;
-            &lt;script src="{{ url_for('static', filename='script.js') }}"&gt;&lt;/script&gt;
-            &lt;link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"&gt;
-            
-            &lt;title&gt;Money Printer!&lt;/title&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="{{ url_for('static', filename='script.js') }}"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"&gt;
+    
+    &lt;title&gt;Money Printer!&lt;/title&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Money Printer!&lt;/h1&gt;
+    &lt;div id="interface" hidden&gt;
+        &lt;p&gt;Money: &lt;span id="money-count"&gt;0&lt;/span&gt;&lt;/p&gt;
+        &lt;button id="printer-button" onclick="print_money()"&gt;Print money!&lt;/button&gt;
         
-        &lt;/head&gt;
-        &lt;body&gt;
-            &lt;h1&gt;Money Printer!&lt;/h1&gt;
-            &lt;div id="interface" hidden&gt;
-                &lt;p&gt;Money: &lt;span id="money-count"&gt;0&lt;/span&gt;&lt;/p&gt;
-                &lt;button id="printer-button" onclick="print_money()"&gt;Print money!&lt;/button&gt;
-                
-                &lt;div id="upgrades"&gt;
-                    {% for i in range(0, 8, 2) %}
-                        &lt;button class="upgrade" id="{{ i }}" onclick="click_upgrade(this.id)"&gt;
-                            Upgrade manual printer: &lt;span id="price{{ i + 1 }}"&gt;0&lt;/span&gt; money
-                        &lt;/button&gt;
-                        &lt;button class="upgrade" id="{{ i + 1 }}" onclick="automatic_upgrade(this.id)"&gt;
-                            Get automatic printer: &lt;span id="price{{ i + 2 }}"&gt;0&lt;/span&gt; money
-                        &lt;/button&gt;
-                        &lt;br&gt;
-                    {% endfor %}
-                &lt;/div&gt;
-                &lt;button id="save-button" onclick="saveGame()"&gt;Save Game&lt;/button&gt;
-            &lt;/div&gt;
-        &lt;/body&gt;
-        &lt;/html&gt;
+        &lt;div id="upgrades"&gt;
+            {% for i in range(0, 8, 2) %}
+                &lt;button class="upgrade" id="{{ i }}" onclick="click_upgrade(this.id)"&gt;
+                    Upgrade manual printer: &lt;span id="price{{ i + 1 }}"&gt;0&lt;/span&gt; money
+                &lt;/button&gt;
+                &lt;button class="upgrade" id="{{ i + 1 }}" onclick="automatic_upgrade(this.id)"&gt;
+                    Get automatic printer: &lt;span id="price{{ i + 2 }}"&gt;0&lt;/span&gt; money
+                &lt;/button&gt;
+                &lt;br&gt;
+            {% endfor %}
+        &lt;/div&gt;
+        &lt;button id="save-button" onclick="saveGame()"&gt;Save Game&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
             </code></pre>
     <h1> CSS </h1>
     <pre><code class="language-css">
